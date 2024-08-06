@@ -27,7 +27,9 @@ body{
 .head{
     background-color: darkgreen;
 }
-
+.snakeBody{
+    background-color: greenyellow;
+}
 .food{
     background-color: brown;
 }

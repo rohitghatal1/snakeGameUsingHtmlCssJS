@@ -1,4 +1,4 @@
-let direction = {x:0, y:0};
+let direction = { x: 0, y: 0 };
 const foodSound = new Audio('../sounds/food.mp3');
 const gameOverSound = new Audio('../sounds/gameover.mp3');
 const moveSound = new Audio('../sounds/move.mp3');
@@ -8,30 +8,35 @@ let speed = 2
 let lastPaintTime = 0;
 let snakeArr = [
     {
-        x:13,
+        x: 13,
         y: 15
     }
 ];
-let food = {x:15, y:17};
+let food = { x: 15, y: 17 };
 //Game functions
-function main(ctime){
+function main(ctime) {
     window.requestAnimationFrame(main);
-    console.log(ctime);
-    if((ctime - lastPaintTime)/1000 < 1/speed){
+    // console.log(ctime);
+    if ((ctime - lastPaintTime) / 1000 < 1 / speed) {
         return;
     }
     lastPaintTime = ctime;
     gameEngine();
 }
-function gameEngine(){
+function gameEngine() {
     //part 1: updating the snake array & food
     //Part 2: render the snake
     gameSpace.innerHtml = "";
-    snakeArr.forEach((e, index)=>{
+    snakeArr.forEach((e, index) => {
         snakeElement = document.createElement('div');
         snakeElement.style.gridRowStart = e.y;
         snakeElement.style.gridColumnStart = e.x;
-        snakeElement.classList.add('head');
+        if (index === 0) {
+            snakeElement.classList.add('head');
+        }
+        else{
+            snakeElement.classList.add('snakeBody');
+        }
         gameSpace.appendChild(snakeElement);
     })
 
@@ -43,4 +48,37 @@ function gameEngine(){
     gameSpace.appendChild(foodElement);
 }
 
+// game logic starts here 
 window.requestAnimationFrame(main);
+window.addEventListener('keydown', e =>{
+    inputDir = {x:0, y:1} //starting the game
+    moveSound.play();
+    switch(e.key){
+        case "ArrowUp":
+            console.log("Arrow Up");
+            inputDir.x = 0;
+            inputDir.y = -1;
+            break;
+
+        case "ArrowDown":
+            console.log("Arrow Down");
+            inputDir.x = 0;
+            inputDir.y = 1;
+            break;
+
+        case "ArrowLeft":
+            console.log("Arrow Left");
+            inputDir.x = -1;
+            inputDir.y = 0;
+            break;
+
+        case "ArrowRight":
+            console.log("Arrow right");
+            inputDir.x = 1;
+            inputDir.y = 0;
+            break;
+        default:
+            break;
+    }
+
+})
