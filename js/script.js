@@ -4,7 +4,7 @@ const gameOverSound = new Audio('../sounds/gameover.mp3');
 const moveSound = new Audio('../sounds/move.mp3');
 const musicSound = new Audio('../sounds/music.mp3')
 let gameSpace = document.getElementById("gameBoard");
-let speed = 2;
+let speed = 5;
 let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [
@@ -91,9 +91,13 @@ function gameEngine() {
 // Game logic starts here 
 window.requestAnimationFrame(main);
 window.addEventListener('keydown', e => {
+    musicSound.play();
     inputDir = { x: 0, y: 1 } // Starting the game
     moveSound.play();
     switch (e.key) {
+        case "Space":
+            musicSound.pause();
+            
         case "ArrowUp":
             console.log("Arrow Up");
             inputDir.x = 0;

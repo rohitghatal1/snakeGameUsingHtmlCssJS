@@ -25,11 +25,15 @@ body{
 }
 
 .head{
-    background-color: darkgreen;
+    background-color: rgb(74, 72, 72);
+    border-radius: 8px;
 }
 .snakeBody{
-    background-color: greenyellow;
+    background: linear-gradient(yellow, brown);
+    border: .25vmin solid white;
+    border-radius: 12px;
 }
 .food{
-    background-color: brown;
+    background: linear-gradient(red, orange);
+    border-radius: 10px;
 }
