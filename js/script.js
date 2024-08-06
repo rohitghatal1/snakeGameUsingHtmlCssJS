@@ -1,10 +1,11 @@
-let direction = { x: 0, y: 0 };
+let inputDir = { x: 0, y: 0 };
 const foodSound = new Audio('../sounds/food.mp3');
 const gameOverSound = new Audio('../sounds/gameover.mp3');
 const moveSound = new Audio('../sounds/move.mp3');
 const musicSound = new Audio('../sounds/music.mp3')
 let gameSpace = document.getElementById("gameBoard");
 let speed = 2
+let score = 0;
 let lastPaintTime = 0;
 let snakeArr = [
     {
@@ -23,9 +24,34 @@ function main(ctime) {
     lastPaintTime = ctime;
     gameEngine();
 }
+function isCollide(sArr){
+    return false;
+}
+
 function gameEngine() {
     //part 1: updating the snake array & food
-    //Part 2: render the snake
+    if(isCollide(snakeArr)){
+        gameOverSound.play();
+        musicSound.pause();
+        inputDir = {x:0, y:0};
+        alert("Game over. Press any key to play again!!!");
+        snakeArr = [{x: 13, y: 15}];
+        musicSound.play();
+        score = 0;
+    }
+
+    //if the snake eats food
+    if(snakeArr[0].y === food.y && snakeArr[x]===food.x){
+        snakeArr.unshift({x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y})
+        let a = 2;
+        let b = 16;
+        food = {x:Math.round(a + (b-a)* Math.random()), y:Math.round(a + (b-a)* Math.random())}
+    }
+
+    // moving the snake 
+    
+
+    //Part 2: display the snake
     gameSpace.innerHtml = "";
     snakeArr.forEach((e, index) => {
         snakeElement = document.createElement('div');
