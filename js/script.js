@@ -2,11 +2,12 @@ let inputDir = { x: 0, y: 0 };
 const foodSound = new Audio('../sounds/food.mp3');
 const gameOverSound = new Audio('../sounds/gameover.mp3');
 const moveSound = new Audio('../sounds/move.mp3');
-const musicSound = new Audio('../sounds/music.mp3')
+const musicSound = new Audio('../sounds/music.mp3');
 let gameSpace = document.getElementById("gameBoard");
 let speed = 5;
 let score = 0;
 let lastPaintTime = 0;
+let isPaused = false;
 let snakeArr = [
     { x: 13, y: 15 }
 ];
@@ -15,6 +16,7 @@ let food = { x: 15, y: 17 };
 // Game functions
 function main(ctime) {
     window.requestAnimationFrame(main);
+    if (isPaused) return;
     if ((ctime - lastPaintTime) / 1000 < 1 / speed) {
         return;
     }
@@ -91,36 +93,53 @@ function gameEngine() {
 // Game logic starts here 
 window.requestAnimationFrame(main);
 window.addEventListener('keydown', e => {
-    musicSound.play();
-    inputDir = { x: 0, y: 1 } // Starting the game
-    moveSound.play();
     switch (e.key) {
-        case "Space":
-            musicSound.pause();
-            
         case "ArrowUp":
-            console.log("Arrow Up");
-            inputDir.x = 0;
-            inputDir.y = -1;
+            if (inputDir.y !== 1) {  // Prevent moving in the opposite direction
+                musicSound.play();
+                inputDir.x = 0;
+                inputDir.y = -1;
+                moveSound.play();
+            }
             break;
 
         case "ArrowDown":
-            console.log("Arrow Down");
-            inputDir.x = 0;
-            inputDir.y = 1;
+            if (inputDir.y !== -1) {  // Prevent moving in the opposite direction
+                musicSound.play();
+                inputDir.x = 0;
+                inputDir.y = 1;
+                moveSound.play();
+            }
             break;
 
         case "ArrowLeft":
-            console.log("Arrow Left");
-            inputDir.x = -1;
-            inputDir.y = 0;
+            if (inputDir.x !== 1) {  // Prevent moving in the opposite direction
+                musicSound.play();
+                inputDir.x = -1;
+                inputDir.y = 0;
+                moveSound.play();
+            }
             break;
 
         case "ArrowRight":
-            console.log("Arrow Right");
-            inputDir.x = 1;
-            inputDir.y = 0;
+            if (inputDir.x !== -1) {  // Prevent moving in the opposite direction
+                musicSound.play();
+                inputDir.x = 1;
+                inputDir.y = 0;
+                moveSound.play();
+            }
             break;
+
+        case " ":
+            isPaused = !isPaused;
+            if (isPaused) {
+                musicSound.pause();
+            } else {
+                musicSound.play();
+                window.requestAnimationFrame(main);
+            }
+            break;
+
         default:
             break;
     }
