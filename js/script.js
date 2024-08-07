@@ -92,7 +92,51 @@ function gameEngine() {
     gameSpace.appendChild(foodElement);
 }
 
-// Game logic starts here 
+// Swipe detection
+function addSwipeControls() {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    document.body.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+        touchStartY = event.changedTouches[0].screenY;
+    });
+
+    document.body.addEventListener('touchend', (event) => {
+        touchEndX = event.changedTouches[0].screenX;
+        touchEndY = event.changedTouches[0].screenY;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+        const absDiffX = Math.abs(diffX);
+        const absDiffY = Math.abs(diffY);
+
+        if (absDiffX > absDiffY) {
+            if (diffX > 0 && inputDir.x !== -1) { // Swipe right
+                inputDir = { x: 1, y: 0 };
+                moveSound.play();
+            } else if (diffX < 0 && inputDir.x !== 1) { // Swipe left
+                inputDir = { x: -1, y: 0 };
+                moveSound.play();
+            }
+        } else {
+            if (diffY > 0 && inputDir.y !== -1) { // Swipe down
+                inputDir = { x: 0, y: 1 };
+                moveSound.play();
+            } else if (diffY < 0 && inputDir.y !== 1) { // Swipe up
+                inputDir = { x: 0, y: -1 };
+                moveSound.play();
+            }
+        }
+    }
+}
+
+// Initialize the game
 window.requestAnimationFrame(main);
 window.addEventListener('keydown', e => {
     switch (e.key) {
@@ -150,3 +194,5 @@ window.addEventListener('keydown', e => {
             break;
     }
 });
+
+addSwipeControls(); // Add this line to initialize swipe controls
