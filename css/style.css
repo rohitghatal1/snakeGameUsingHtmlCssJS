@@ -5,10 +5,19 @@
 body{
     padding: 0;
 }
+
+.pausinfo{
+    background-color: black;
+    color: #fff;
+    padding: 1rem;
+    font-size: larger;
+    text-align: center;
+}
+
 #gameContainer{
-    background: url(../images/backgroundImage.avif);
+    background: radial-gradient(blue, purple, green, yellow);
     min-width: 100%;
-    min-height: 100vh;
+    min-height: 92.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +25,7 @@ body{
 
 .gameSpace{
     min-width: 90vmin;
-    min-height: 92vmin;
+    min-height: 85vmin;
     background: linear-gradient(rgb(241, 15, 203), rgb(5, 175, 232));
     border:2px solid black;
     display: grid;
