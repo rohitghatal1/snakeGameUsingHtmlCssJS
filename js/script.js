@@ -5,6 +5,7 @@ const moveSound = new Audio('../sounds/move.mp3');
 const musicSound = new Audio('../sounds/music.mp3');
 let gameSpace = document.getElementById("gameBoard");
 let playbtn = document.getElementById("playBtn");
+let playPause = document.getElementById("playpauseContainer");
 let speed = 5;
 let score = 0;
 let lastPaintTime = 0;
@@ -135,10 +136,12 @@ window.addEventListener('keydown', e => {
             isPaused = !isPaused;
             if (isPaused) {
                 musicSound.pause();
+                playPause.style.display = "block";
                 playbtn.style.display = "block";
             } else {
                 musicSound.play();
                 window.requestAnimationFrame(main);
+                playPause.style.display = "none";
                 playbtn.style.display = "none";
             }
             break;
