@@ -46,3 +46,17 @@ body{
     background: linear-gradient(red, orange);
     border-radius: 10px;
 }
+
+.pause,
+.play{
+    display: none;
+    background-color: #ccc;
+    color: #fff;
+    padding: 0.5rem;
+    border: 0.5rem;
+    font-size: large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
