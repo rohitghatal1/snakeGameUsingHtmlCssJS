@@ -6,11 +6,11 @@ body{
     padding: 0;
 }
 
-.pausinfo{
+.playPauseInfo{
     background-color: black;
     color: #fff;
     padding: 1rem;
-    font-size: larger;
+    font-size: 2rem;
     text-align: center;
 }
 
@@ -58,8 +58,8 @@ body{
     background-color: rgba(0,0,0, 0.5);
     z-index: 3;
 }
-
-.playpauseContainer .play{
+.pause,
+.play{
     display: none;
     background-color: #ccc;
     color: #fff;
