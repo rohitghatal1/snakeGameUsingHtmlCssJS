@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://127.0.0.1:5500/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="./Resume_files/style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="personal-info">
+                <h2>Personal</h2>
+                <hr>
+                <p><strong>Name</strong><br>Rohit Ghatal</p>
+                <p><strong>Address</strong><br>Thasikhel, Lalitpur 44700 Lalitpur</p>
+                <p><strong>Phone number</strong><br>9806415229</p>
+                <p><strong>Email</strong><br>rohitghatal@gmail.com</p>
+                <p><strong>Date of birth</strong><br>25-08-2001</p>
+                <p><strong>Place of birth</strong><br>Mahendranagar, Kanchanpur</p>
+                <p><strong>Gender</strong><br>Male</p>
+                <p><strong>Nationality</strong><br>Nepali</p>
+                <p><strong>Marital status</strong><br>Single</p>
+                <p><strong>Website</strong><br>rohitghatal.com.np</p>
+                <p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/rohit-ghatal-7823111b4/">linkedin.com/in/rohit-ghatal-7823111b4/</a></p>
+            </div>
+            <div class="interests">
+                <h2>Interests</h2>
+                <hr>
+                <p>Coding</p>
+                <p>Playing Games (virtual)</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <h1>Rohit Ghatal</h1>
+            <hr>
+            <p class="summary">
+                Highly motivated <strong>Frontend</strong> and <strong>Backend</strong> web developer with a strong foundation in both client-side and server-side technologies. Proven ability to design and implement responsive, user-friendly web applications. Seeking a web developer position to contribute my expertise in full-stack development while achieving professional growth in a dynamic and innovative environment.
+            </p>
+
+            <section class="education">
+                <h2>Education and Qualifications</h2>
+                <hr>
+                <div class="education-item">
+                    <h3>BCA</h3>
+                    <p><strong>Vedas College, Lalitpur</strong><br>Mar 2021 - Present</p>
+                    <p>This course provided a comprehensive education in both theoretical and practical aspects of computer applications. Key programming languages and technologies studied includes C, Java, HTML, CSS, PHP, MySQL, DotNet C#, and ASP.NET, equipping me with a solid foundation in software development and web technologies. Additionally, the course covered essential business and management subjects such as Financial Accounting and Introduction to Management, which enhanced my understanding of the organizational and financial aspects of the IT industry.</p>
+                </div>
+            </section>
+
+            <section class="skills">
+                <h2>Skills</h2>
+                <hr>
+                <div class="skill-item">
+                    <p>HTML</p>
+                    <div class="skill-bar"><div class="fill" style="width: 90%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>CSS</p>
+                    <div class="skill-bar"><div class="fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>JavaScript</p>
+                    <div class="skill-bar"><div class="fill" style="width: 70%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>Bootstrap</p>
+                    <div class="skill-bar"><div class="fill" style="width: 60%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>PHP</p>
+                    <div class="skill-bar"><div class="fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>MySQL</p>
+                    <div class="skill-bar"><div class="fill" style="width: 50%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>C</p>
+                    <div class="skill-bar"><div class="fill" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>ReactJs</p>
+                    <div class="skill-bar"><div class="fill" style="width: 35%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>Java</p>
+                    <div class="skill-bar"><div class="fill" style="width: 40%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>MongoDB</p>
+                    <div class="skill-bar"><div class="fill" style="width: 20%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <p>NodeJs</p>
+                    <div class="skill-bar"><div class="fill" style="width: 20%;"></div></div>
+                </div>
+            </section>
+        </main>
+    </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>

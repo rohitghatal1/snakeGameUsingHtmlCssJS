@@ -58,8 +58,8 @@ body{
     background-color: rgba(0,0,0, 0.5);
     z-index: 3;
 }
-.pause,
-.play{
+
+.playpauseContainer .play{
     display: none;
     background-color: #ccc;
     color: #fff;
