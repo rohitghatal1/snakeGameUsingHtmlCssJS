@@ -17,7 +17,7 @@ body{
 #gameContainer{
     background: radial-gradient(blue, purple, green, yellow);
     min-width: 100%;
-    min-height: 92.5vh;
+    min-height: 90.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,4 +71,11 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.controlsDetail{
+    position: fixed;
+    top: 50%;
+    left: 3rem;
+    transform: translateY(-50%);
 }
