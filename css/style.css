@@ -79,3 +79,17 @@ body{
     left: 3rem;
     transform: translateY(-50%);
 }
+
+.controlsDetail .controlSection{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.controlsDetail .controlSection span{
+    font-size: 1.2rem;
+}
+.controlsDetail h2{
+    font-size: 2rem;
+}
