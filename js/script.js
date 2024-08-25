@@ -196,3 +196,13 @@ window.addEventListener('keydown', e => {
 });
 
 addSwipeControls(); // Add this line to initialize swipe controls
+
+document.addEventListener('touchmove', function(event) {
+    // Check if the user is swiping downward
+    if (event.touches.length > 0) {
+        let touch = event.touches[0];
+        if (touch.clientY > 0) { // Detect downward swipe
+            event.preventDefault(); // Prevent the default action (pull-to-refresh)
+        }
+    }
+}, { passive: false }); // Set passive to false to call preventDefault
