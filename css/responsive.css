@@ -1,0 +1,14 @@
+@media (max-width: 600px){
+    .playPauseInfo{
+        padding: 1rem;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    #gameContainer{
+        height: 91.3vh;
+    }
+    .controlsDetail{
+        display: none;
+    }
+}
