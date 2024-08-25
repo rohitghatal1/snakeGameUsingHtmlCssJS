@@ -73,23 +73,32 @@ body{
     transform: translate(-50%, -50%);
 }
 
-.controlsDetail{
+.controlsDetail {
     position: fixed;
     top: 50%;
     left: 3rem;
     transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Background blur */
+    border-radius: 15px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Subtle shadow */
 }
 
-.controlsDetail .controlSection{
+.controlsDetail .controlSection {
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.controlsDetail .controlSection span{
+.controlsDetail .controlSection span {
     font-size: 1.2rem;
+    color: white; /* Text color for better contrast */
 }
-.controlsDetail h2{
+
+.controlsDetail h2 {
     font-size: 2rem;
+    color: white; /* Text color for better contrast */
 }
